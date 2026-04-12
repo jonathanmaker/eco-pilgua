@@ -28,9 +28,11 @@ header {
     transition: transform 0.3s ease; /* Pequeño efecto al pasar el mouse */
 }
 
+/*
 #logo:hover {
-    transform: scale(1.05); /* Se agranda un poquitito al pasar el mouse */
+    transform: scale(1.05);
 }
+*/
 
 header h1 {
     margin: 0;
@@ -61,9 +63,11 @@ nav a {
     transition: color 0.3s ease;
 }
 
+/*
 nav a:hover {
     color: #4CAF50;
 }
+*/
 
 /* Secciones Principales */
 main, footer {
