@@ -5,7 +5,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9fdf9; /* Un verde muy claro y fresco */
+    background-color: #f9fdf9;
+    /* Un verde muy claro y fresco */
     color: #333;
 }
 
@@ -14,7 +15,7 @@ header {
     background-color: #ffffff;
     text-align: center;
     padding: 2rem 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #logo {
@@ -23,9 +24,12 @@ header {
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 1rem;
-    border: 4px solid #ffffff; /* Borde blanco para darle un toque premium */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave para que resalte elegante */
-    transition: transform 0.3s ease; /* Pequeño efecto al pasar el mouse */
+    border: 4px solid #ffffff;
+    /* Borde blanco para darle un toque premium */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para que resalte elegante */
+    transition: transform 0.3s ease;
+    /* Pequeño efecto al pasar el mouse */
 }
 
 /*
@@ -36,7 +40,8 @@ header {
 
 header h1 {
     margin: 0;
-    color: #2c5e3d; /* Verde oscuro elegante */
+    color: #2c5e3d;
+    /* Verde oscuro elegante */
     font-size: 2.5em;
 }
 
@@ -70,7 +75,8 @@ nav a:hover {
 */
 
 /* Secciones Principales */
-main, footer {
+main,
+footer {
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1.5rem;
@@ -87,13 +93,43 @@ h3 {
     color: #444;
 }
 
+/* Galería de Historia */
+.historia-galeria {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    /* Permite que las fotos bajen si la pantalla es pequeña */
+    margin-top: 2rem;
+}
+
+.historia-galeria img {
+    border-radius: 4px;
+    /* Un pequeño borde redondeado suave (opcional, se ve bien, pero es rectangular) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Ocultar las reglas horizontales (hr) para un aspecto más limpio */
 hr {
     display: none;
 }
 
 /* Testimonios */
+#testimonios article {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    /* Centramos el contenido por defecto */
+}
+
+#testimonios img {
+    display: block;
+    margin: 0 auto 1rem auto;
+    /* Esto centra la imagen horizontalmente */
+}
+
 blockquote {
+    text-align: left;
+    /* Mantenemos el texto de la cita a la izquierda */
     background: #f1f8f1;
     border-left: 4px solid #4CAF50;
     margin: 1rem 0;
