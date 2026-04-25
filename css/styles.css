@@ -168,9 +168,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ============================================================
-   SECCIÓN: NUESTROS PRODUCTOS - REDISEÑO PREMIUM 2026
-   ============================================================ */
+/* SECCIÓN: NUESTROS PRODUCTOS */
 
 #productos {
     padding: 6rem 0;
@@ -206,7 +204,7 @@ a:hover {
     margin-top: 4rem;
 }
 
-/* Estilo "Shy" (Tímido y Minimalista) */
+
 #productos-lista li {
     background: transparent;
     border-radius: 40px;
@@ -232,10 +230,14 @@ a:hover {
     z-index: 5;
     pointer-events: none;
     opacity: 0.8;
-    width: 85%; /* Ancho fijo para mantener los saltos de línea */
-    display: block; /* Asegura que el ancho se respete */
-    padding: 0.6rem 1.2rem; /* Espacio reservado para el fondo */
-    background: rgba(255, 255, 255, 0); /* Invisible por defecto */
+    width: 85%;
+    /* Ancho fijo para mantener los saltos de línea */
+    display: block;
+    /* Asegura que el ancho se respete */
+    padding: 0.6rem 1.2rem;
+    /* Espacio reservado para el fondo */
+    background: rgba(255, 255, 255, 0);
+    /* Invisible por defecto */
     border-radius: 15px;
     backdrop-filter: blur(0px);
 }
@@ -244,10 +246,11 @@ a:hover {
     opacity: 1;
     color: #1a3a25;
     /* Usamos scale para achicar sin cambiar los saltos de línea originales */
-    transform: translateY(90px) scale(0.75); 
-    background: rgba(255, 255, 255, 0.7); /* Se vuelve visible en hover */
+    transform: translateY(90px) scale(0.75);
+    background: rgba(255, 255, 255, 0.7);
+    /* Se vuelve visible en hover */
     backdrop-filter: blur(8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 /* Revelado Sutil (Imagen desaturada) */
@@ -264,10 +267,21 @@ a:hover {
     z-index: 1;
 }
 
-#productos-lista li:nth-child(1)::after { background-image: url('../img/prod3.jpg'); }
-#productos-lista li:nth-child(2)::after { background-image: url('../img/prod2.jpg'); }
-#productos-lista li:nth-child(3)::after { background-image: url('../img/prod1.jpg'); }
-#productos-lista li:nth-child(4)::after { background-image: url('../img/prod4.jpg'); }
+#productos-lista li:nth-child(1)::after {
+    background-image: url('../img/prod3.jpg');
+}
+
+#productos-lista li:nth-child(2)::after {
+    background-image: url('../img/prod2.jpg');
+}
+
+#productos-lista li:nth-child(3)::after {
+    background-image: url('../img/prod1.jpg');
+}
+
+#productos-lista li:nth-child(4)::after {
+    background-image: url('../img/prod4.jpg');
+}
 
 /* ESTADO HOVER (Sleek & Shy) */
 #productos-lista li:hover {
@@ -276,19 +290,24 @@ a:hover {
 }
 
 #productos-lista li:hover::after {
-    opacity: 1; /* Revelado completo para mayor nitidez */
+    opacity: 1;
+    /* Revelado completo para mayor nitidez */
     transform: scale(1);
-    filter: contrast(1.1) saturate(1.1); /* Mejora de nitidez y color */
+    filter: contrast(1.1) saturate(1.1);
+    /* Mejora de nitidez y color */
 }
 
 /* Eliminar elementos "ruidosos" */
-#productos-lista li::before { display: none; }
+#productos-lista li::before {
+    display: none;
+}
 
 @media (max-width: 768px) {
     #productos-lista {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+
     #productos-lista li {
         min-height: 180px;
     }
@@ -299,6 +318,7 @@ a:hover {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -308,4 +328,4 @@ a:hover {
 img {
     max-width: 100%;
     height: auto;
-}
+}
