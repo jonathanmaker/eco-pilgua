@@ -172,3 +172,31 @@ img {
     max-width: 100%;
     height: auto;
 }
+/* ============================================================
+   SECCION: MISION Y VISION
+   ============================================================ */
+
+/* Contenedor principal que organiza las tarjetas en fila horizontal */
+#mision-vision .articulos-mv {
+  display: flex;          /* Pone los artículos uno al lado del otro */
+  gap: 1.5rem;            /* Espacio entre las tarjetas */
+  flex-wrap: wrap;        /* Si no caben, bajan a la siguiente línea */
+}
+
+/* Estilo de cada tarjeta (Misión y Visión) */
+#mision-vision article {
+  flex: 1;                /* Cada tarjeta ocupa el mismo ancho disponible */
+  min-width: 240px;       /* Ancho mínimo antes de que bajen a otra línea */
+  background-color: var(--verde-suave);   /* Color de fondo verde claro */
+  border-radius: 10px;    /* Esquinas redondeadas */
+  padding: 1.4rem 1.6rem; /* Espacio interior entre el borde y el texto */
+  border-left: 5px solid var(--verde-medio); /* Línea verde a la izquierda */
+}
+
+/* Estilo del título dentro de cada tarjeta (h3) */
+#mision-vision article h3 {
+  margin-top: 0;          /* Elimina el espacio superior del título */
+  font-size: 1.1rem;      /* Tamaño del texto del título */
+  text-transform: uppercase;  /* Convierte el texto a MAYÚSCULAS */
+  letter-spacing: 1px;    /* Espaciado entre letras */
+  color: var(--verde-oscuro); /* Color verde oscuro para el título */
