@@ -39,11 +39,9 @@ header {
     /* Pequeño efecto al pasar el mouse */
 }
 
-/*
 #logo:hover {
     transform: scale(1.05);
 }
-*/
 
 header h1 {
     margin: 0;
@@ -70,16 +68,34 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #2c5e3d;
-    font-weight: bold;
+    color: var(--verde-oscuro);
+    font-weight: 600; /* Un poco menos rudo que bold, más elegante */
+    padding: 0.5rem 0.2rem;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-/*
-nav a:hover {
-    color: #4CAF50;
+/* Efecto sutil moderno: pequeña barrita verde que crece desde el centro */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0px;
+    left: 50%;
+    background-color: var(--verde-medio);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    border-radius: 4px;
 }
-*/
+
+nav a:hover {
+    color: var(--verde-medio);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
 
 /* Secciones Principales */
 main,
