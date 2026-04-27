@@ -144,27 +144,141 @@ cite {
 
 /* Pie de página */
 footer {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
     border-top: 1px solid #e0e0e0;
 }
 
-footer ul {
-    list-style: none;
-    padding: 0;
+/* Contenedor principal del footer - FLEXBOX */
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
-footer li {
+/* Lado izquierdo - Icono */
+.footer-icono {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.footer-icono img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Lado derecho - Información */
+.footer-info {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+}
+
+.footer-info h2 {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Sección contacto y redes como flexbox */
+.footer-contacto {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-redes {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-info ul {
+    list-style: none;
+    padding: 0;
     margin: 0.5rem 0;
+}
+
+.footer-info li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+}
+
+.footer-info li i {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.footer-info .icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+}
+
+.footer-info .texto {
+    color: #333;
+}
+
+.footer-info a:hover .texto {
+    text-decoration: underline;
+}
+
+.footer-redes h3 {
+    margin-top: 0;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-icono img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contacto,
+    .footer-redes {
+        min-width: 100%;
+    }
 }
 
 /* Enlaces generales */
 a {
+    text-decoration: none;
     color: #2c5e3d;
 }
 
 a:hover {
+    text-decoration: none;
+}
+
+footer a:hover .texto {
     text-decoration: underline;
 }
 
