@@ -146,6 +146,35 @@ h3 {
   color: var(--verde-oscuro); /* Color verde oscuro para el título */
 }
 
+/* Nuestra Historia */
+
+.nuestra-historia {
+    max-width:  800px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color:#f9fdf9;
+    border: 1px solid var(--verde-suave);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: justify;
+    line-height: 1.8;
+}
+.frase-destacada{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: block;
+}
+.frase-final {
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--verde-oscuro);
+}
+
+
 /* Galería de Historia */
 .historia-galeria {
     display: flex;
@@ -154,12 +183,17 @@ h3 {
     flex-wrap: wrap;
     /* Permite que las fotos bajen si la pantalla es pequeña */
     margin-top: 2rem;
+    width: 100%;
 }
 
 .historia-galeria img {
-    border-radius: 4px;
-    /* Un pequeño borde redondeado suave (opcional, se ve bien, pero es rectangular) */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Ocultar las reglas horizontales (hr) para un aspecto más limpio */
