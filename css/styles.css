@@ -1,8 +1,8 @@
 /* Variables de Color (aportadas por PR #5) */
 :root {
-  --verde-suave: #f1f8f1;
-  --verde-medio: #4CAF50;
-  --verde-oscuro: #2c5e3d;
+    --verde-suave: #f1f8f1;
+    --verde-medio: #4CAF50;
+    --verde-oscuro: #2c5e3d;
 }
 
 /* Estilos básicos para Eco Pilgua */
@@ -19,7 +19,7 @@ body {
 
 /* Encabezado y Navegación */
 header {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
     text-align: center;
     padding: 2rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -45,13 +45,14 @@ header {
 
 header h1 {
     margin: 0;
-    color: #2c5e3d;
-    /* Verde oscuro elegante */
+    color: #ffffff;
+    /* Blanco con sombra */
     font-size: 2.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 header p {
-    color: #666;
+    color: var(--verde-suave);
     font-style: italic;
     margin-bottom: 1.5rem;
 }
@@ -62,54 +63,43 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1.0rem;
     flex-wrap: wrap;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--verde-oscuro);
-    font-weight: 600; /* Un poco menos rudo que bold, más elegante */
-    padding: 0.5rem 0.2rem;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-/* Efecto sutil moderno: pequeña barrita verde que crece desde el centro */
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 3px;
-    bottom: 0px;
-    left: 50%;
-    background-color: var(--verde-medio);
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: var(--verde-medio);
-}
-
-nav a:hover::after {
-    width: 100%;
+    color: var(--verde-oscuro);
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 /* Secciones Principales */
-main,
-footer {
+main {
     max-width: 800px;
     margin: 2rem auto;
     padding: 0 1.5rem;
 }
 
+section {
+    margin-bottom: 4rem;
+}
+
 h2 {
-    color: #2c5e3d;
+    color: var(--verde-oscuro);
     border-bottom: 2px solid #e0e0e0;
     padding-bottom: 0.5rem;
     margin-top: 2rem;
+    margin-bottom: 1.2rem;
 }
 
 h3 {
@@ -122,31 +112,51 @@ h3 {
 
 /* Contenedor principal que organiza las tarjetas en fila horizontal */
 #mision-vision .articulos-mv {
-  display: flex;          /* Pone los artículos uno al lado del otro */
-  gap: 1.5rem;            /* Espacio entre las tarjetas */
-  flex-wrap: wrap;        /* Si no caben, bajan a la siguiente línea */
+    display: flex;
+    /* Pone los artículos uno al lado del otro */
+    gap: 1.5rem;
+    /* Espacio entre las tarjetas */
+    flex-wrap: wrap;
+    /* Si no caben, bajan a la siguiente línea */
 }
 
-/* Estilo de cada tarjeta (Misión y Visión) */
-#mision-vision article {
-  flex: 1;                /* Cada tarjeta ocupa el mismo ancho disponible */
-  min-width: 240px;       /* Ancho mínimo antes de que bajen a otra línea */
-  background-color: var(--verde-suave);   /* Color de fondo verde claro */
-  border-radius: 10px;    /* Esquinas redondeadas */
-  padding: 1.4rem 1.6rem; /* Espacio interior entre el borde y el texto */
-  border-left: 5px solid var(--verde-medio); /* Línea verde a la izquierda */
+/* Estilo de cada tarjeta (Misión, Visión e Historia) */
+#mision-vision article,
+#historia article {
+    flex: 1;
+    /* Cada tarjeta ocupa el mismo ancho disponible */
+    min-width: 240px;
+    /* Ancho mínimo antes de que bajen a otra línea */
+    background-color: var(--verde-suave);
+    /* Color de fondo verde claro */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    padding: 1.4rem 1.6rem;
+    /* Espacio interior entre el borde y el texto */
+    border-left: 5px solid var(--verde-medio);
+    /* Línea verde a la izquierda */
+}
+
+/* Eliminar el margen superior del primer párrafo en las tarjetas para alinear con h2 */
+#historia article p:first-child {
+    margin-top: 0;
 }
 
 /* Estilo del título dentro de cada tarjeta (h3) */
 #mision-vision article h3 {
-  margin-top: 0;          /* Elimina el espacio superior del título */
-  font-size: 1.1rem;      /* Tamaño del texto del título */
-  text-transform: uppercase;  /* Convierte el texto a MAYÚSCULAS */
-  letter-spacing: 1px;    /* Espaciado entre letras */
-  color: var(--verde-oscuro); /* Color verde oscuro para el título */
+    margin-top: 0;
+    /* Elimina el espacio superior del título */
+    font-size: 1.1rem;
+    /* Tamaño del texto del título */
+    text-transform: uppercase;
+    /* Convierte el texto a MAYÚSCULAS */
+    letter-spacing: 1px;
+    /* Espaciado entre letras */
+    color: var(--verde-oscuro);
+    /* Color verde oscuro para el título */
 }
 
-/* Galería de Historia */
+/* Espaciado de galería */
 .historia-galeria {
     display: flex;
     justify-content: center;
@@ -158,8 +168,15 @@ h3 {
 
 .historia-galeria img {
     border-radius: 4px;
-    /* Un pequeño borde redondeado suave (opcional, se ve bien, pero es rectangular) */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    height: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.historia-galeria img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Ocultar las reglas horizontales (hr) para un aspecto más limpio */
@@ -189,15 +206,15 @@ hr {
 
 /* tarjeta de cada testimonio */
 .testimonio {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid var(--verde-medio);
+    background-color: var(--verde-suave);
+    border: none;
+    border-left: 5px solid var(--verde-medio);
     border-radius: 10px;
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     flex: 1 1 260px;
     max-width: 320px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -212,7 +229,7 @@ hr {
     height: 110px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid var(--verde-suave);
+    border: 4px solid #ffffff;
     display: block;
     margin: 0 auto 1rem auto;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
@@ -258,10 +275,11 @@ hr {
 blockquote {
     text-align: left;
     /* Mantenemos el texto de la cita a la izquierda */
-    background: #f1f8f1;
-    border-left: 4px solid #4CAF50;
+    background-color: var(--verde-suave);
+    border-left: 5px solid var(--verde-medio);
+    border-radius: 0 10px 10px 0;
     margin: 1rem 0;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     font-style: italic;
 }
 
@@ -273,6 +291,16 @@ cite {
 /* Pie de página */
 footer {
     border-top: 1px solid #e0e0e0;
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-medio));
+    color: #ffffff;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+footer h2 {
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Contenedor principal del footer - FLEXBOX */
@@ -281,6 +309,9 @@ footer {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 /* Lado izquierdo - Icono */
@@ -305,7 +336,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    
+
 }
 
 .footer-info h2 {
@@ -339,9 +370,13 @@ footer {
     line-height: 1;
 }
 
+.footer-contacto li {
+    padding: 0.5rem 0;
+}
+
 .footer-info li i {
     font-size: 1.2rem;
-    color: #333;
+    color: inherit;
 }
 
 .footer-info .icono {
@@ -352,7 +387,7 @@ footer {
 }
 
 .footer-info .texto {
-    color: #333;
+    color: inherit;
 }
 
 .footer-info a:hover .texto {
@@ -368,8 +403,8 @@ footer {
     text-align: center;
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid #e0e0e0;
-    color: #666;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Responsive para móviles */
@@ -399,11 +434,28 @@ footer {
 /* Enlaces generales */
 a {
     text-decoration: none;
-    color: #2c5e3d;
+    color: var(--verde-oscuro);
 }
 
 a:hover {
     text-decoration: none;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer .footer-redes a {
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+footer .footer-redes a:hover {
+    color: var(--verde-oscuro);
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
 footer a:hover .texto {
@@ -412,25 +464,12 @@ footer a:hover .texto {
 
 /* SECCIÓN: NUESTROS PRODUCTOS */
 
-#productos {
-    padding: 6rem 0;
-    margin: 2rem auto;
-    background: #ffffff;
-}
 
-#productos h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #1a3a25;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-}
 
 #productos p {
     text-align: center;
     max-width: 650px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 1.5rem auto;
     color: #555;
     font-size: 1.15rem;
     line-height: 1.6;
@@ -442,30 +481,30 @@ footer a:hover .texto {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    margin-top: 4rem;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
 
 #productos-lista li {
-    background: transparent;
-    border-radius: 40px;
-    border: 1px solid rgba(44, 94, 61, 0.08);
+    background-color: var(--verde-suave);
+    border-radius: 10px;
+    border-left: 5px solid var(--verde-medio);
     transition: all 1.2s cubic-bezier(0.2, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     z-index: 1;
     min-height: 240px;
+
 }
 
 #productos-lista li span {
     position: relative;
     font-weight: 600;
-    color: #4a4a4a;
+    color: var(--verde-oscuro);
     font-size: 1.15rem;
     text-align: center;
     transition: all 1.2s cubic-bezier(0.2, 0, 0.2, 1);
@@ -507,6 +546,7 @@ footer a:hover .texto {
     filter: grayscale(0.3) brightness(1.1);
     transition: all 1.5s cubic-bezier(0.2, 0, 0.2, 1);
     z-index: 1;
+    border-radius: inherit;
 }
 
 #productos-lista li:nth-child(1)::after {
@@ -544,14 +584,19 @@ footer a:hover .texto {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     #productos-lista {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        margin-top: 2rem;
     }
 
     #productos-lista li {
-        min-height: 180px;
+        min-height: 200px;
+    }
+
+    #productos-lista li:hover span {
+        transform: translateY(60px) scale(0.85);
     }
 }
 
