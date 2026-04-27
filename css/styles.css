@@ -1,0 +1,498 @@
+/* Variables de Color (aportadas por PR #5) */
+:root {
+  --verde-suave: #f1f8f1;
+  --verde-medio: #4CAF50;
+  --verde-oscuro: #2c5e3d;
+}
+
+/* Estilos básicos para Eco Pilgua */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fdf9;
+    /* Un verde muy claro y fresco */
+    color: #333;
+}
+
+/* Encabezado y Navegación */
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#logo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 4px solid #ffffff;
+    /* Borde blanco para darle un toque premium */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para que resalte elegante */
+    transition: transform 0.3s ease;
+    /* Pequeño efecto al pasar el mouse */
+}
+
+#logo:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    margin: 0;
+    color: #2c5e3d;
+    /* Verde oscuro elegante */
+    font-size: 2.5em;
+}
+
+header p {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--verde-oscuro);
+    font-weight: 600; /* Un poco menos rudo que bold, más elegante */
+    padding: 0.5rem 0.2rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efecto sutil moderno: pequeña barrita verde que crece desde el centro */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0px;
+    left: 50%;
+    background-color: var(--verde-medio);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: var(--verde-medio);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Secciones Principales */
+main,
+footer {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    color: #2c5e3d;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    color: #444;
+}
+
+/* ============================================================
+   SECCION: MISION Y VISION
+   ============================================================ */
+
+/* Contenedor principal que organiza las tarjetas en fila horizontal */
+#mision-vision .articulos-mv {
+  display: flex;          /* Pone los artículos uno al lado del otro */
+  gap: 1.5rem;            /* Espacio entre las tarjetas */
+  flex-wrap: wrap;        /* Si no caben, bajan a la siguiente línea */
+}
+
+/* Estilo de cada tarjeta (Misión y Visión) */
+#mision-vision article {
+  flex: 1;                /* Cada tarjeta ocupa el mismo ancho disponible */
+  min-width: 240px;       /* Ancho mínimo antes de que bajen a otra línea */
+  background-color: var(--verde-suave);   /* Color de fondo verde claro */
+  border-radius: 10px;    /* Esquinas redondeadas */
+  padding: 1.4rem 1.6rem; /* Espacio interior entre el borde y el texto */
+  border-left: 5px solid var(--verde-medio); /* Línea verde a la izquierda */
+}
+
+/* Estilo del título dentro de cada tarjeta (h3) */
+#mision-vision article h3 {
+  margin-top: 0;          /* Elimina el espacio superior del título */
+  font-size: 1.1rem;      /* Tamaño del texto del título */
+  text-transform: uppercase;  /* Convierte el texto a MAYÚSCULAS */
+  letter-spacing: 1px;    /* Espaciado entre letras */
+  color: var(--verde-oscuro); /* Color verde oscuro para el título */
+}
+
+/* Galería de Historia */
+.historia-galeria {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    /* Permite que las fotos bajen si la pantalla es pequeña */
+    margin-top: 2rem;
+}
+
+.historia-galeria img {
+    border-radius: 4px;
+    /* Un pequeño borde redondeado suave (opcional, se ve bien, pero es rectangular) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ocultar las reglas horizontales (hr) para un aspecto más limpio */
+hr {
+    display: none;
+}
+
+/* Testimonios */
+#testimonios article {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    /* Centramos el contenido por defecto */
+}
+
+#testimonios img {
+    display: block;
+    margin: 0 auto 1rem auto;
+    /* Esto centra la imagen horizontalmente */
+}
+
+blockquote {
+    text-align: left;
+    /* Mantenemos el texto de la cita a la izquierda */
+    background: #f1f8f1;
+    border-left: 4px solid #4CAF50;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-style: italic;
+}
+
+cite {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Pie de página */
+footer {
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Contenedor principal del footer - FLEXBOX */
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Lado izquierdo - Icono */
+.footer-icono {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.footer-icono img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Lado derecho - Información */
+.footer-info {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+}
+
+.footer-info h2 {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Sección contacto y redes como flexbox */
+.footer-contacto {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-redes {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.footer-info li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1;
+}
+
+.footer-info li i {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.footer-info .icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+}
+
+.footer-info .texto {
+    color: #333;
+}
+
+.footer-info a:hover .texto {
+    text-decoration: underline;
+}
+
+.footer-redes h3 {
+    margin-top: 0;
+}
+
+/* Copyright */
+.footer-copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    color: #666;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-icono img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contacto,
+    .footer-redes {
+        min-width: 100%;
+    }
+}
+
+/* Enlaces generales */
+a {
+    text-decoration: none;
+    color: #2c5e3d;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+footer a:hover .texto {
+    text-decoration: underline;
+}
+
+/* SECCIÓN: NUESTROS PRODUCTOS */
+
+#productos {
+    padding: 6rem 0;
+    margin: 2rem auto;
+    background: #ffffff;
+}
+
+#productos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a3a25;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+#productos p {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    color: #555;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+/* Grilla Minimalista */
+#productos-lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+
+#productos-lista li {
+    background: transparent;
+    border-radius: 40px;
+    border: 1px solid rgba(44, 94, 61, 0.08);
+    transition: all 1.2s cubic-bezier(0.2, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    min-height: 240px;
+}
+
+#productos-lista li span {
+    position: relative;
+    font-weight: 600;
+    color: #4a4a4a;
+    font-size: 1.15rem;
+    text-align: center;
+    transition: all 1.2s cubic-bezier(0.2, 0, 0.2, 1);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.8;
+    width: 85%;
+    /* Ancho fijo para mantener los saltos de línea */
+    display: block;
+    /* Asegura que el ancho se respete */
+    padding: 0.6rem 1.2rem;
+    /* Espacio reservado para el fondo */
+    background: rgba(255, 255, 255, 0);
+    /* Invisible por defecto */
+    border-radius: 15px;
+    backdrop-filter: blur(0px);
+}
+
+#productos-lista li:hover span {
+    opacity: 1;
+    color: #1a3a25;
+    /* Usamos scale para achicar sin cambiar los saltos de línea originales */
+    transform: translateY(90px) scale(0.75);
+    background: rgba(255, 255, 255, 0.7);
+    /* Se vuelve visible en hover */
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Revelado Sutil (Imagen desaturada) */
+#productos-lista li::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.05);
+    filter: grayscale(0.3) brightness(1.1);
+    transition: all 1.5s cubic-bezier(0.2, 0, 0.2, 1);
+    z-index: 1;
+}
+
+#productos-lista li:nth-child(1)::after {
+    background-image: url('../img/prod3.jpg');
+}
+
+#productos-lista li:nth-child(2)::after {
+    background-image: url('../img/prod2.jpg');
+}
+
+#productos-lista li:nth-child(3)::after {
+    background-image: url('../img/prod1.jpg');
+}
+
+#productos-lista li:nth-child(4)::after {
+    background-image: url('../img/prod4.jpg');
+}
+
+/* ESTADO HOVER (Sleek & Shy) */
+#productos-lista li:hover {
+    border-color: rgba(76, 175, 80, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.02);
+}
+
+#productos-lista li:hover::after {
+    opacity: 1;
+    /* Revelado completo para mayor nitidez */
+    transform: scale(1);
+    filter: contrast(1.1) saturate(1.1);
+    /* Mejora de nitidez y color */
+}
+
+/* Eliminar elementos "ruidosos" */
+#productos-lista li::before {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #productos-lista {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    #productos-lista li {
+        min-height: 180px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
